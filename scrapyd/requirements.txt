@@ -1,0 +1,9 @@
+requests
+aiohttp
+redis
+pymongo
+pyquery
+scrapy
+scrapyd
+scrapyd-client
+scrapy-redis
