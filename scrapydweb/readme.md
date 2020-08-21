@@ -6,3 +6,6 @@ USERNAME = 'phi'
 PASSWORD = 'fourspeedforward'
 ```
 
+```
+ docker run -itd --name scrapydweb_phi -p 5000:5000 -v scrapydweb_data:/code phimecho/scrapydweb
+```

@@ -3,3 +3,9 @@
 ```
 docker run -itd --name scrapyd_phi -p 6800:6800 -v scrapyd_data:/code phimecho/scrapyd
 ```
+
+
+scrapyd volume路径
+```
+/mnt/wsl/docker-desktop-data/data/docker/volumes/scrapyd_data/_data#
+```

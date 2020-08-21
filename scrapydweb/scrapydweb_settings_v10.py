@@ -49,7 +49,6 @@ PASSWORD = 'fourspeedforward'
 SCRAPYD_SERVERS = [
         '127.0.0.1:6800',
     # 'username:password@localhost:6801#group',
-    # ('username', 'password', 'localhost', '6801', 'group'),
     ('','','180.76.153.244','6800','baidu_server'),
 ]
 
