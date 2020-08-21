@@ -23,8 +23,8 @@ SCRAPYDWEB_PORT = 5000
 ENABLE_AUTH = True
 # In order to enable basic auth, both USERNAME and PASSWORD should be non-empty strings.
 
-USERNAME = 'username'
-PASSWORD = 'password'
+USERNAME = 'phi'
+PASSWORD = 'fourspeedforward'
 
 
 # Make sure that [Scrapyd](https://github.com/scrapy/scrapyd) has been installed
@@ -49,7 +49,7 @@ PASSWORD = 'password'
 SCRAPYD_SERVERS = [
         '127.0.0.1:6800',
     # 'username:password@localhost:6801#group',
-    ('username', 'password', 'localhost', '6801', 'group'),
+    # ('username', 'password', 'localhost', '6801', 'group'),
     ('','','180.76.153.244','6800','baidu_server'),
 ]
 
