@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  worker:
+    image: tikazyq/crawlab:latest
+    container_name: crawlab__worker
+    environment:
+      CRAWLAB_SERVER_MASTER: "N"  # whether to be master node 是否为主节点，主节点为 Y，工作节点为 N
+      CRAWLAB_MONGO_HOST: "180.76.153.244"  # MongoDB host address MongoDB 的地址，在 docker compose 网络中，直接引用服务名称
+      CRAWLAB_MONGO_PORT: "27777"  # MongoDB port MongoDB 的端口
+      CRAWLAB_MONGO_DB: "crawlab_pro"  # MongoDB database MongoDB 的数据库
+      CRAWLAB_MONGO_USERNAME: "mongousername"  # MongoDB username MongoDB 的用户名
+      CRAWLAB_MONGO_PASSWORD: "mongopassword"  # MongoDB password MongoDB 的密码
+      CRAWLAB_MONGO_AUTHSOURCE: "admin"  # MongoDB auth source MongoDB 的验证源
+      CRAWLAB_REDIS_ADDRESS: "180.76.153.244"  # Redis host address Redis 的地址，在 docker compose 网络中，直接引用服务名称
+      CRAWLAB_REDIS_PORT: "6666"  # Redis port Redis 的端口
+      CRAWLAB_REDIS_DATABASE: "1"  # Redis database Redis 的数据库
+      CRAWLAB_REDIS_PASSWORD: "redispassword"  # Redis password Redis 的密码
+      CRAWLAB_TASK_WORKERS: 16  # number of task executors 任务执行器个数（并行执行任务数）
+      CRAWLAB_SERVER_REGISTER_TYPE: "ip"  # node register type 节点注册方式. 默认为 mac 地址，也可设置为 ip（防止 mac 地址冲突）
+      CRAWLAB_SERVER_REGISTER_IP: "192.168.0.2"  # node register ip 节点注册IP. 节点唯一识别号，只有当 CRAWLAB_SERVER_REGISTER_TYPE 为 "ip" 时才生效
