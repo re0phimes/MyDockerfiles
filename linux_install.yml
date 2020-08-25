@@ -1,0 +1,25 @@
+# ubuntu 常用软件安装
+
+version: '3.3'
+services:
+    redis:
+        image: redis:latest
+        ports:
+            - 6379:6379
+        container_name: redis_db
+        restart: always
+        command: redis-server --requirepass "arknights"
+        volumes:
+            - "/opt/redis/data:/data"
+    mongo:
+        image: mongo:latest
+        container_name: mongo_db
+        restart: always
+        volumes:
+            - "/opt/mongo/data/db:/data/db"  # make data persistent 持久化
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: "beihai"
+            MONGO_INITDB_ROOT_PASSWORD: "4speedforward"
+        ports:
+            - "27017:27017"  # expose port to host machine 暴露接口到宿主机
+
