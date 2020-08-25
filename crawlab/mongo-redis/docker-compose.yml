@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+	# redis
+	redis:
+  	image: redis:latest
+    ports:
+    	- "6379:6379"
+    container_name: redis
+    command: redis-server --requirepss "arknights"
+    volumes:
+    	- "redis/data:/data"
+      - "redis_data/redis.conf:/etc/redis/redis.conf"
+     restart: always
+  # mongodb
+  mongo:
+  	image: mongo:latest
+    ports:
+    	- "27017:27017"
+    container_name: mongo
+    volumes:
+    	- "mongo/data:/data"
+    enviroment:
+    	MONGO_INITDB_ROOT_USERNAME: "beihai"
+      MONGO_INITDB_ROOT_PASSWORD: "yaoduoxiang"
+  # portainer 
+  portainer:
+  	image: portainer/portainer
+    ports:
+    	- "9000:9000"
+    container_name: portainer
+    
+  
+    
+    
