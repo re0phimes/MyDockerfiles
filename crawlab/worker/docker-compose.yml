@@ -17,4 +17,4 @@ services:
       CRAWLAB_REDIS_PASSWORD: "redispassword"  # Redis password Redis 的密码
       CRAWLAB_TASK_WORKERS: 16  # number of task executors 任务执行器个数（并行执行任务数）
       CRAWLAB_SERVER_REGISTER_TYPE: "ip"  # node register type 节点注册方式. 默认为 mac 地址，也可设置为 ip（防止 mac 地址冲突）
-      CRAWLAB_SERVER_REGISTER_IP: "192.168.0.2"  # node register ip 节点注册IP. 节点唯一识别号，只有当 CRAWLAB_SERVER_REGISTER_TYPE 为 "ip" 时才生效
+      CRAWLAB_SERVER_REGISTER_IP: "192.168.0.4"  # node register ip 节点注册IP. 节点唯一识别号，只有当 CRAWLAB_SERVER_REGISTER_TYPE 为 "ip" 时才生效
