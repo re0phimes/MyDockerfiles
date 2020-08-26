@@ -5,10 +5,10 @@ services:
     ports:
       - "6379:6379"
     container_name: redis
-    command: redis-server --requirepss "arknights"
+    command: redis-server --requirepass "arknights"
     volumes:
-      - "redis/data:/data"
-      - "redis_data/redis.conf:/etc/redis/redis.conf"
+      - "/opt/redis/data:/data"
+      - "/opt/redis/redis.conf:/etc/redis/redis.conf"
     restart: always
   mongo:
     image: mongo:latest
@@ -16,17 +16,8 @@ services:
       - "27017:27017"
     container_name: mongo
     volumes:
-      - "mongo/data:/data"
+      - "/opt/mongo/data:/data"
     environment:
       MONGO_INITDB_ROOT_USERNAME: "beihai"
       MONGO_INITDB_ROOT_PASSWORD: "yaoduoxiang"
-  portainer:
-    image: portainer/portainer
-    ports:
-      - "9000:9000"
-    container_name: portainer
 
-
-
-volumes: 
-  redis/data: {}
