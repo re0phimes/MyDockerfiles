@@ -8,8 +8,9 @@ services:
     command: redis-server --requirepass "arknights"
     volumes:
       - "/opt/redis/data:/data"
-      - "/opt/redis/redis.conf:/etc/redis/redis.conf"
+      - "./redis.conf:/etc/redis/redis.conf"
     restart: always
+    network_mode: "bridge"
   mongo:
     image: mongo:latest
     ports:
@@ -20,4 +21,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: "beihai"
       MONGO_INITDB_ROOT_PASSWORD: "yaoduoxiang"
+    restart: always
+    network_mode: "bridge"
 

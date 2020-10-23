@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  python37_nodejs:
+    build: .
+    image: python37_nodejs:latest
+    volumes:
+      - python37node_data:/data
+      - "/etc/localtime:/etc/localtime"
+      - "/etc/timezone:/etc/timezone"
+    # 容器名称
+    container_name: "baidu_index"
+
+
+volumes:
+  python37node_data:  
