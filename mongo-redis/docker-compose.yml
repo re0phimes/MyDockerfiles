@@ -7,8 +7,10 @@ services:
     container_name: redis
     command: redis-server --requirepass "arknights"
     volumes:
-      - "/opt/redis/data:/data"
+      - "redis_data:/data"
       - "./redis.conf:/etc/redis/redis.conf"
+      - "/etc/localtime:/etc/localtime"
+      # - "/etc/timezone:/etc/timezone" # only ubuntu needed
     restart: always
     network_mode: "bridge"
   mongo:
@@ -17,10 +19,22 @@ services:
       - "27890:27017"
     container_name: mongo
     volumes:
-      - "/opt/mongo/data:/data"
+      - "mongo_data:/data/db"
+      - "mongo_config_data: /data/configdb"
+      - "/etc/localtime:/etc/localtime"
+      - "/etc/timezone:/etc/timezone"
     environment:
       MONGO_INITDB_ROOT_USERNAME: "beihai"
       MONGO_INITDB_ROOT_PASSWORD: "yaoduoxiang"
     restart: always
     network_mode: "bridge"
+
+volumes:
+  mongo_data:
+    name: mongo_data
+  mongo_config_data:
+    name: mongo_config_data
+  redis_data:
+    name: redis_data
+
 
