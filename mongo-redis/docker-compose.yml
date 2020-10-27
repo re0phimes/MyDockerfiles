@@ -22,7 +22,7 @@ services:
       - "mongo_data:/data/db"
       - "mongo_config_data: /data/configdb"
       - "/etc/localtime:/etc/localtime"
-      - "/etc/timezone:/etc/timezone"
+      # - "/etc/timezone:/etc/timezone" # only ubuntu needed
     environment:
       MONGO_INITDB_ROOT_USERNAME: "beihai"
       MONGO_INITDB_ROOT_PASSWORD: "yaoduoxiang"
