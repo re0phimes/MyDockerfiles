@@ -20,7 +20,7 @@ services:
     container_name: mongo
     volumes:
       - "mongo_data:/data/db"
-      - "mongo_config_data: /data/configdb"
+      - "mongo_config_data:/data/configdb"
       - "/etc/localtime:/etc/localtime"
       # - "/etc/timezone:/etc/timezone" # only ubuntu needed
     environment:
